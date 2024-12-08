@@ -7,7 +7,7 @@ const connection = await mysql.createConnection({
 });
 const fetchStaff = async () => {
   try {
-    const query = "SELECT * FROM stafflab";
+    const query = "SELECT * FROM staff";
     const [rows] = await connection.execute(query);
     return rows;
   } catch (error) {
@@ -18,7 +18,7 @@ const fetchStaff = async () => {
 
 const fetchStaffDetails = async (id) => {
   try {
-    const query = "SELECT * FROM stafflab WHERE id = ?";
+    const query = "SELECT * FROM staff WHERE id = ?";
     const [rows] = await connection.execute(query, [id]);
     return rows[0] || null;
   } catch (error) {
